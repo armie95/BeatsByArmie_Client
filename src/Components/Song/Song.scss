@@ -1,0 +1,92 @@
+.song {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1em;
+  background-color: #222222;
+  color: white;
+  padding: 0em 1em;
+  height: 3rem;
+  max-height: 3rem;
+  margin: auto;
+  font-size: 12px;
+  border-radius: 50px;
+  font-weight: 500;
+
+  //TODO: This should make all the song rows equal in width, but it is not working need to check later.
+  flex: 1 1 0;
+
+  &__thumbnail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 2.5em;
+    overflow: hidden;
+    border-radius: 50px;
+    border: white 2px solid;
+    margin-right: auto;
+  }
+
+  &__thumbnail {
+    width: 100%;
+  }
+
+  &__icon {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 2em;
+  }
+
+  &__play-btn {
+    fill: lightcoral;
+  }
+
+  &__download-btn {
+    fill: skyblue;
+  }
+
+  &__play-btn:hover {
+    fill: rgb(187, 8, 8);
+  }
+
+  &__download-btn:hover {
+    fill: rgb(61, 158, 196);
+  }
+
+  &__name,
+  &__duration,
+  &__bpm,
+  &__tag {
+    font-size: 1.1em;
+    text-transform: capitalize;
+  }
+  &__name {
+    flex: 2 1 0;
+  }
+
+  &__tags-container {
+    display: flex;
+    gap: 0.5em;
+    width: 100px;
+    overflow: hidden;
+  }
+
+  &__tag {
+    border-radius: 50px;
+    border: gray 1px solid;
+    width: max-content;
+    padding: 0.2em 1em;
+    background-color: rgb(78, 78, 78);
+    &:hover {
+      color: black;
+      background-color: #fff;
+    }
+  }
+}
