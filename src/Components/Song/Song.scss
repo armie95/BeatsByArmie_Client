@@ -1,4 +1,6 @@
 .song {
+  font-size: 10px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,15 +8,15 @@
   background-color: #222222;
   color: white;
   padding: 0em 1em;
-  height: 3rem;
-  max-height: 3rem;
+  height: 2.5rem;
+  max-height: 2.5rem;
+  max-width: 400px;
   margin: auto;
-  font-size: 12px;
   border-radius: 50px;
   font-weight: 500;
 
   //TODO: This should make all the song rows equal in width, but it is not working need to check later.
-  flex: 1 1 0;
+  // flex: 1 1 0;
 
   &__thumbnail-container {
     display: flex;
