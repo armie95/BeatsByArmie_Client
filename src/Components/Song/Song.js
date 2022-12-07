@@ -9,7 +9,7 @@ const Song = ({ song }) => {
     <div className="song">
       <div className="song__thumbnail-container">
         <img
-          src={image_placeholder}
+          src={song?.album_image ? song?.album_image : image_placeholder}
           alt="thumbnail"
           className="song__thumbnail"
         />
