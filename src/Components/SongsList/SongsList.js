@@ -1,8 +1,13 @@
 import React from "react";
 import "./SongsList.scss";
 import Song from "../Song/Song";
+import Songlist from "../../data/songs";
+import { useParams } from "react-router-dom";
 
-function SongsList({ songs }) {
+function SongsList() {
+  const { id } = useParams();
+  const songs = Songlist.filter((song) => song.playlistId == id.split(":")[1]);
+
   return (
     <div className="songs">
       <div className="songs__headers">
