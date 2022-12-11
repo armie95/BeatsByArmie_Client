@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
+import axios from "axios";
 import "./SongsList.scss";
 import Song from "../Song/Song";
-import Songlist from "../../data/songs";
 import { useParams } from "react-router-dom";
 import { AiOutlineCloudDownload } from "react-icons/ai";
 import { BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
@@ -9,14 +9,25 @@ import image_placeholder from "../../assets/images/image_placeholder.jpeg";
 
 function SongsList() {
   const { id } = useParams();
-  const linkAudio = useRef();
+  const linkAudio = React.useRef();
+  const [songs, setSongs] = React.useState([]);
+  const [isPlaying, setIsPlaying] = React.useState(false);
+  const [currentSong, setCurrentSong] = React.useState(null);
 
-  const songs = Songlist.filter((song) => song.playlistId == id.split(":")[1]);
+  React.useEffect(() => {
+    axios({
+      url: "http://localhost:8080/playlistSongs" + id,
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => {
+        setSongs(response.data);
+        setCurrentSong(response.data[0]);
+      })
+      .catch((error) => alert(error, "somethign went wrong!"));
+  }, [id]);
 
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentSong, setCurrentSong] = useState(songs[0]);
-
-  useEffect(() => {
+  React.useEffect(() => {
     if (isPlaying) {
       linkAudio.current.play();
     } else {
@@ -47,11 +58,14 @@ function SongsList() {
       </audio>
 
       <div className="songList">
+        <video autoPlay loop muted className="songList__videobg">
+          <source src={require("../../assets/video.mp4")} type="video/mp4" />
+        </video>
         <div className="songList__thumbnail-container">
           <img
             src={
               currentSong?.album_image
-                ? currentSong?.album_image
+                ? "http://localhost:8080/images/" + currentSong?.album_image
                 : image_placeholder
             }
             alt="thumbnail"

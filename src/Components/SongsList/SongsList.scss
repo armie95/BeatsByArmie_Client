@@ -1,21 +1,30 @@
 .songList {
-  background-image: url("https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80");
-  background-size: contain;
   font-size: 14px;
   color: white;
   width: 50%;
   margin: auto;
   font-weight: 500;
-  padding: 20px;
-  border-radius: 10px;
+  position: relative;
+  z-index: 3;
 
   //TODO: This should make all the song rows equal in width, but it is not working need to check later.
   // flex: 1 1 0;
+
+  &__videobg {
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    z-index: -3;
+    width: 100%;
+    filter: brightness(0.7);
+  }
 
   &__thumbnail-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
+    margin-left: 20px;
     max-width: 5em;
     border-radius: 50px;
     border: white 2px solid;
@@ -24,6 +33,7 @@
 
   &__thumbnail {
     width: 100%;
+    border-radius: 50px;
   }
 
   &__icon {
@@ -35,6 +45,7 @@
     display: flex;
     align-items: center;
     gap: 0.5em;
+    margin-left: 20px;
     font-size: 2em;
   }
 
@@ -70,6 +81,7 @@
   &__duration,
   &__bpm,
   &__tag {
+    margin-left: 20px;
     font-size: 1.1em;
     text-transform: capitalize;
   }

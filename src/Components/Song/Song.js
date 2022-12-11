@@ -27,7 +27,11 @@ const Song = ({
     <div className="song">
       <div className="song__thumbnail-container" onClick={selectSong}>
         <img
-          src={song?.album_image ? song?.album_image : image_placeholder}
+          src={
+            song?.album_image
+              ? "http://localhost:8080/images/" + song?.album_image
+              : image_placeholder
+          }
           alt="thumbnail"
           className="song__thumbnail"
         />

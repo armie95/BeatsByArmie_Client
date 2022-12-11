@@ -1,45 +1,40 @@
 import "./index.css";
-import playlist from "../../data/playlist";
+import React from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-// const API_URL = "http://localhost:8080/";
-// const SongsEndPoint = "songs/";
-
-// //const Home = () => {
-//   const [songsList, SetSongsList] = useState([]);
-
-//   async function fetchVideosList() {
-//     try {
-//       const response = await axios.get(API_URL + SongsEndPoint);
-//       const data = response.data;
-//       //store your data into the songslist
-//       SetSongsList(data);
-
-//       ///grab the input index within your songslist and store it into the variaable
-//       const firstSongID = data[0].id;
-//     } catch (err) {
-//       console.log(`There was an error ${err.message}`);
-//     }
-//   }
-// };
 
 function PlayList() {
   const navigate = useNavigate();
 
+  const [playlist, setPlayList] = React.useState([]);
+
+  React.useEffect(() => {
+    axios({
+      url: "http://localhost:8080/fullPlaylist",
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => setPlayList(response.data))
+      .catch((error) => alert(error, "somethign went wrong!"));
+  }, []);
+
   return (
     <div className="playlist-container">
-      {playlist.map((play) => {
-        return (
-          <div
-            className="playlist-box"
-            onClick={() => navigate("/playlist:" + play.id)}
-          >
-            <img src={play.album_image} alt="" className="playlist-img" />
-            <p className="playlist-name">{play.name}</p>
-            <p className="playlist-description">{play.description}</p>
-          </div>
-        );
-      })}
+      {playlist?.map((play) => (
+        <div
+          key={play.id}
+          className="playlist-box"
+          onClick={() => navigate("/playlist:" + play.id)}
+        >
+          <img
+            alt="thumbnail"
+            className="playlist-img"
+            src={"http://localhost:8080/images/" + play.album_image}
+          />
+          <p className="playlist-name">{play.name}</p>
+          <p className="playlist-description">{play.description}</p>
+        </div>
+      ))}
     </div>
   );
 }
