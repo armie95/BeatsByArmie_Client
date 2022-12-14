@@ -1,0 +1,197 @@
+@mixin mobile {
+  @media screen and (max-width: 425px) {
+    @content;
+  }
+}
+
+.playlist {
+  width: 100%;
+  font-family: "Titillium Web", sans-serif;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &__videobg {
+    width: 100%;
+    height: 50vh;
+    filter: brightness(0.5);
+    z-index: 1;
+    position: relative;
+    background-color: black;
+
+    @include mobile {
+      height: 220px;
+    }
+  }
+
+  &__Title {
+    position: absolute;
+    top: 15vh;
+    left: 25%;
+    width: 18rem;
+    font-size: 3rem;
+    color: white;
+    font-weight: bolder;
+    z-index: 3;
+
+    @include mobile {
+      top: 5vh;
+      left: 5%;
+      width: 70%;
+      font-size: 2.3rem;
+    }
+  }
+
+  &__box {
+    width: 15rem;
+    padding: 7px;
+    height: 300px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0px 0px 7px rgb(204, 204, 204);
+
+    @include mobile {
+      width: 46%;
+      padding: 5px;
+      height: 15rem;
+      margin-top: 4%;
+      margin-left: 2.5%;
+      box-shadow: 0px 0px 4px rgb(204, 204, 204);
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 190px;
+    border-radius: 7px;
+    object-fit: contain;
+    background-color: rgb(55, 54, 54);
+    @include mobile {
+      width: 100%;
+      height: 9rem;
+      border-radius: 7px;
+      object-fit: contain;
+      background-color: gainsboro;
+    }
+  }
+  &__name {
+    font-weight: bold;
+    color: gray;
+
+    @include mobile {
+      margin: 0;
+      color: gray;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__description {
+    @include mobile {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+
+  &__heading {
+    margin: 2rem 2rem;
+    text-align: center;
+    padding: 17px;
+    font-size: 1.4rem;
+    color: rgb(6, 45, 45);
+    font-weight: 800;
+    border-top: 2px solid rgb(6, 45, 45, 0.5);
+    border-bottom: 2px solid rgb(6, 45, 45, 0.5);
+    @include mobile {
+      font-size: 14px;
+      margin: 2%;
+      padding: 9px;
+    }
+  }
+
+  &__infobox {
+    width: 100%;
+    height: 50rem;
+    display: flex;
+    margin-top: 5rem;
+    align-items: center;
+    background-size: contain;
+    justify-content: center;
+    background-image: url(https://images.prismic.io/aiaiai/b37d0e6c-58ee-4b31-9098-f188d63ce8a0_collage1234.jpg?auto=compress,format);
+
+    @include mobile {
+      height: 22rem;
+      margin-top: 3rem;
+    }
+  }
+
+  &__infoContent {
+    width: 80%;
+    height: 25rem;
+    padding: 50px;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    background-color: #262626;
+    justify-content: space-between;
+
+    @include mobile {
+      height: 15rem;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+  }
+
+  &__infoH4 {
+    color: white;
+
+    @include mobile {
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+  }
+
+  &__infoH1 {
+    color: white;
+    @include mobile {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__singup {
+    color: white;
+    font-size: 2rem;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: none;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid white;
+    font-size: 20px;
+    padding: 15px 5px;
+    background: transparent;
+    color: white;
+
+    @include mobile {
+      margin-bottom: 0.4rem;
+      font-size: 0.8rem;
+      padding: 8px;
+    }
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+}

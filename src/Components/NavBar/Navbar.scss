@@ -1,0 +1,68 @@
+@mixin mobile {
+  @media screen and (max-width: 425px) {
+    @content;
+  }
+}
+
+.navbar {
+  font-size: 14px;
+  display: flex;
+  padding: 1em 3rem;
+  align-items: center;
+  background-color: black;
+  justify-content: space-between;
+  box-shadow: 0 0 15px -4px gray;
+
+  @include mobile {
+    padding: 0.5em;
+    font-size: 14px;
+  }
+
+  &__logo {
+    color: ghostwhite;
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: 500;
+    transition-duration: 1s;
+    text-transform: capitalize;
+    &:hover {
+      color: white;
+      font-weight: bold;
+    }
+
+    @include mobile {
+      font-size: 1em;
+    }
+  }
+
+  &__links {
+    color: ghostwhite;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: 500;
+    transition-duration: 1s;
+    text-transform: capitalize;
+    &:hover {
+      color: white;
+      font-weight: bold;
+    }
+    @include mobile {
+      font-size: 1em;
+    }
+  }
+  &__menu {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__btn {
+    border-radius: 4px;
+    box-shadow: 0 0 10px -2px gray;
+    fill: lightcoral;
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+}

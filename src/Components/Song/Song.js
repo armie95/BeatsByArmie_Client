@@ -1,26 +1,23 @@
-import React from "react";
-import image_placeholder from "../../assets/images/image_placeholder.jpeg";
-import { AiOutlineCloudDownload } from "react-icons/ai";
-import { BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
 import "./Song.scss";
+import React from "react";
+import { BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
+import image_placeholder from "../../assets/images/image_placeholder.jpeg";
 
 const Song = ({
   song,
-  index,
-  songs,
   isPlaying,
   currentSong,
   setIsPlaying,
   setCurrentSong,
 }) => {
   const selectSong = () => {
-    setCurrentSong(songs[index]);
+    setCurrentSong(song);
     setIsPlaying(false);
   };
 
   const handlePlay = () => {
     setIsPlaying(true);
-    setCurrentSong(songs[index]);
+    setCurrentSong(song);
   };
 
   return (
@@ -43,13 +40,6 @@ const Song = ({
         {song?.duration || "duration"}
       </p>
       <p className="song__bpm">{song?.bpm || "bpm"}</p>
-      <div className="song__tags-container">
-        {song?.tags.map((tag, i) => (
-          <p key={i} className="song__tag">
-            {tag || "tag"}
-          </p>
-        ))}
-      </div>
       <div className="song__btns">
         {currentSong.id === song.id && isPlaying ? (
           <BsFillPauseFill
@@ -62,7 +52,6 @@ const Song = ({
             onClick={handlePlay}
           />
         )}
-        <AiOutlineCloudDownload className="song__icon song__download-btn" />
       </div>
     </div>
   );

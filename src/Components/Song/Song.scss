@@ -11,16 +11,15 @@
   height: 2.5rem;
   max-height: 2.5rem;
   max-width: 400px;
+  font-family: "Titillium Web", sans-serif;
   margin: auto;
   border-radius: 50px;
   font-weight: 500;
 
-  //TODO: This should make all the song rows equal in width, but it is not working need to check later.
-  // flex: 1 1 0;
-
   &__thumbnail-container {
     display: flex;
     justify-content: center;
+    background-color: gainsboro;
     align-items: center;
     max-width: 2.5em;
     overflow: hidden;
@@ -31,6 +30,7 @@
 
   &__thumbnail {
     width: 100%;
+    object-fit: contain;
   }
 
   &__icon {
