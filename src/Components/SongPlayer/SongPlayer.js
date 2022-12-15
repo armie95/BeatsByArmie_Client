@@ -15,7 +15,8 @@ const SongPlayer = ({ currentSong, isPlaying, setIsPlaying }) => {
             <img
               src={
                 currentSong?.album_image
-                  ? "http://localhost:8080/images/" + currentSong?.album_image
+                  ? "https://beatsbyarmie.herokuapp.com/images/" +
+                    currentSong?.album_image
                   : image_placeholder
               }
               alt="thumbnail"

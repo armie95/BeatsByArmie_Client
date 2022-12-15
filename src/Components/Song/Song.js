@@ -26,7 +26,7 @@ const Song = ({
         <img
           src={
             song?.album_image
-              ? "http://localhost:8080/images/" + song?.album_image
+              ? "https://beatsbyarmie.herokuapp.com/images/" + song?.album_image
               : image_placeholder
           }
           alt="thumbnail"

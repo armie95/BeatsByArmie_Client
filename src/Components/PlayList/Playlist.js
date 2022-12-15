@@ -10,7 +10,7 @@ function PlayList() {
 
   React.useEffect(() => {
     axios({
-      url: "http://localhost:8080/fullPlaylist",
+      url: "https://beatsbyarmie.herokuapp.com/fullPlaylist",
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
@@ -37,7 +37,9 @@ function PlayList() {
             <img
               alt="thumbnail"
               className="playlist__img"
-              src={"http://localhost:8080/images/" + play.album_image}
+              src={
+                "https://beatsbyarmie.herokuapp.com/images/" + play.album_image
+              }
             />
             <p className="playlist__name">{play.name}</p>
             <p className="playlist__description">{play.description}</p>
