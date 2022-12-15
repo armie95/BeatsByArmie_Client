@@ -2,13 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import "./Navbar.scss";
+import logo from "../../assets/logos/logo.png";
 
 function Navbar() {
-  const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
-
-  //const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -22,15 +19,10 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar__logo">
-        Beats By Armie
+      <Link to="/" className="navbar__logo-container">
+        <img src={logo} alt="Logo" className="navbar__logo" />
       </Link>
-      <div className={"navbar__menu"}>
-        <Link to="/" className="navbar__links" onClick={closeMobileMenu}>
-          Home
-        </Link>
-      </div>
-      {button && <Button className="navbar__btn">Listen Now</Button>}
+      {button && <Button>Listen Now</Button>}
     </nav>
   );
 }

@@ -7,8 +7,8 @@ import SongPlayer from "../SongPlayer/SongPlayer";
 function SongsList() {
   const { id } = useParams();
   const linkAudio = React.useRef();
-  const [songs, setSongs] = React.useState([]);
   const [isPlaying, setIsPlaying] = React.useState(false);
+  const [songs, setSongs] = React.useState([]);
   const [currentSong, setCurrentSong] = React.useState(null);
 
   React.useEffect(() => {
@@ -21,7 +21,7 @@ function SongsList() {
         setSongs(response.data);
         setCurrentSong(response.data[0]);
       })
-      .catch((error) => alert(error, "somethign went wrong!"));
+      .catch((error) => console.log(error, "somethign went wrong!"));
   }, [id]);
 
   React.useEffect(() => {
@@ -34,9 +34,7 @@ function SongsList() {
       <audio
         src={"http://localhost:8080/audio/" + currentSong?.wavfile}
         ref={linkAudio}
-      >
-        <a href="/media/cc0-audio/t-rex-roar.mp3">Download audio</a>
-      </audio>
+      />
 
       <SongPlayer
         isPlaying={isPlaying}

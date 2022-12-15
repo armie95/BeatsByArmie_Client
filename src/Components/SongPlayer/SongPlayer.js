@@ -7,7 +7,7 @@ const SongPlayer = ({ currentSong, isPlaying, setIsPlaying }) => {
   return (
     <div className="songList">
       <video autoPlay loop muted className="songList__videobg">
-        <source src={require("../../assets/video.mp4")} type="video/mp4" />
+        <source src={require("../../assets/video1.mp4")} type="video/mp4" />
       </video>
       <div className="songList__content-container">
         <div className="songList__content">

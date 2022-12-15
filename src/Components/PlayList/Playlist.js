@@ -15,15 +15,15 @@ function PlayList() {
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => setPlayList(response.data))
-      .catch((error) => alert(error, "somethign went wrong!"));
+      .catch((error) => console.log(error, "somethign went wrong!"));
   }, []);
 
   return (
     <div className="playlist">
       <video autoPlay loop muted className="playlist__videobg">
-        <source src={require("../../assets/video.mp4")} type="video/mp4" />
+        <source src={require("../../assets/video1.mp4")} type="video/mp4" />
       </video>
-      <h1 className="playlist__Title">Discover Songs Playlist</h1>
+      <h1 className="playlist__Title">Discover Sound</h1>
 
       <div className="playlist__heading">FEATURED PLAYLIST</div>
 

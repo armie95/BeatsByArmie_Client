@@ -15,6 +15,11 @@
   margin: auto;
   border-radius: 50px;
   font-weight: 500;
+  transition-duration: 0.2s;
+  &:hover {
+    transform: scale(1.05);
+    background-color: #4c4a4a;
+  }
 
   &__thumbnail-container {
     display: flex;
