@@ -1,0 +1,34 @@
+@mixin mobile {
+  @media screen and (max-width: 425px) {
+    @content;
+  }
+}
+
+.navbar {
+  font-size: 14px;
+  display: flex;
+  padding: 1em 3rem;
+  align-items: center;
+  background-color: black;
+  justify-content: space-between;
+  box-shadow: 0 0 15px -4px gray;
+
+  @include mobile {
+    padding: 0.5em;
+    font-size: 14px;
+  }
+
+  &__logo-container {
+    height: 3rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 10rem;
+    width: 100%;
+    @include mobile {
+    }
+  }
+}
