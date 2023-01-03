@@ -18,7 +18,7 @@ function SongsList() {
 
   React.useEffect(() => {
     axios({
-      url: "http://localhost:8080/playlistSongs" + id,
+      url: "https://beatsbyarmie.herokuapp.com/playlistSongs" + id,
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
@@ -33,7 +33,7 @@ function SongsList() {
   const addComment = (e) => {
     e.preventDefault();
     axios({
-      url: "http://localhost:8080/addComment",
+      url: "https://beatsbyarmie.herokuapp.com/addComment",
       method: "POST",
       headers: { "Content-Type": "application/json" },
       data: { comment, id },
@@ -66,7 +66,7 @@ function SongsList() {
   return (
     <div className="songs">
       <audio
-        src={"http://localhost:8080/audio/" + currentSong?.wavfile}
+        src={"https://beatsbyarmie.herokuapp.com/audio/" + currentSong?.wavfile}
         ref={linkAudio}
       />
       <SongPlayer

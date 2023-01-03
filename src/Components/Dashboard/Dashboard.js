@@ -16,7 +16,7 @@ function Dashboard() {
 
     // Get the data from the API
     axios
-      .get("http://localhost:8080/api/users/current", {
+      .get("https://beatsbyarmie.herokuapp.com/api/users/current", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

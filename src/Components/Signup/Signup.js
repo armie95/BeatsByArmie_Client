@@ -12,7 +12,7 @@ function Signup() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:8080/api/users/register", {
+      .post("https://beatsbyarmie.herokuapp.com/api/users/register", {
         email: event.target.email.value,
         password: event.target.password.value,
         first_name: event.target.first_name.value,
