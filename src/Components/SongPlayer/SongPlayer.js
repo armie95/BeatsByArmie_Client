@@ -1,9 +1,14 @@
 import React from "react";
 import "./SongPlayer.scss";
-import { BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
+import { BsFillPlayFill, BsFillPauseFill, BsShuffle } from "react-icons/bs";
 import image_placeholder from "../../assets/images/image_placeholder.jpeg";
 
-const SongPlayer = ({ currentSong, isPlaying, setIsPlaying }) => {
+const SongPlayer = ({
+  currentSong,
+  isPlaying,
+  setIsPlaying,
+  handleShuffle,
+}) => {
   return (
     <div className="songList">
       <video autoPlay loop muted className="songList__videobg">
@@ -44,6 +49,10 @@ const SongPlayer = ({ currentSong, isPlaying, setIsPlaying }) => {
                 onClick={() => setIsPlaying(true)}
               />
             )}
+            <BsShuffle
+              className="songList__icon songList__shuffle-btn"
+              onClick={handleShuffle}
+            />
           </div>
         </div>
       </div>

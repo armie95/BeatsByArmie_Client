@@ -1,0 +1,40 @@
+@import "../../partials/global";
+
+.comment {
+  display: flex;
+  padding-bottom: 1rem;
+  border-bottom: 2px $border-color solid;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+
+  &__row {
+    display: flex;
+    column-gap: 1rem;
+    justify-content: space-between;
+    padding: 0 1rem 0;
+  }
+
+  &__left-col {
+    display: flex;
+    flex-direction: flex-start;
+    align-items: center;
+  }
+
+  &__right-col {
+    display: flex;
+    flex-direction: column;
+    flex: 3 1;
+  }
+
+  &__user-img {
+    max-width: 45px;
+    height: 45px;
+    object-fit: cover;
+    object-position: left center;
+    border-radius: 50%;
+  }
+  &__date {
+    margin: 0;
+    margin-top: 1rem;
+  }
+}

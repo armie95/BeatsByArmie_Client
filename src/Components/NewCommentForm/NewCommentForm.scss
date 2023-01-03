@@ -1,0 +1,45 @@
+.new-comment-form {
+  &__user-img {
+    display: flex;
+    max-width: 50px;
+    height: 50px;
+    object-fit: cover;
+    object-position: left center;
+    border-radius: 50%;
+  }
+  &__row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 0 1rem 0;
+  }
+  &__right-col {
+    display: flex;
+    flex-direction: column;
+    flex: 3 1;
+  }
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    padding: 0.25rem;
+  }
+  &__input {
+    height: 50px;
+    padding: 1rem;
+  }
+  &__left {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  &__label {
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+  }
+
+  &__submit-btn {
+    justify-content: center;
+    width: 200px;
+  }
+}
