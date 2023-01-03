@@ -74,6 +74,18 @@
     fill: rgb(187, 8, 8);
   }
 
+  &__shuffle-btn {
+    fill: lightcoral;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 100px;
+    height: 40px;
+    width: 40px;
+    margin-left: 5;
+    padding: 10px;
+    cursor: pointer;
+  }
+
   &__name,
   &__duration {
     margin-left: 20px;

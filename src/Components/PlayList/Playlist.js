@@ -57,9 +57,7 @@ function PlayList() {
           </div>
           <div>
             <input className="playlist__input" />
-            <Link to="/signup" className="playlist__singup">
-              Signup
-            </Link>
+            Need an account? <Link to="/signup">Sign up</Link>
           </div>
         </div>
       </div>

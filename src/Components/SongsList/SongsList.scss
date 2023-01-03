@@ -11,6 +11,9 @@
   justify-content: center;
   align-items: center;
   font-family: "Titillium Web", sans-serif;
+  &:hover {
+    background-color: rgb(240, 240, 240);
+  }
 
   & .song {
     width: 100%;

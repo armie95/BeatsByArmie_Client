@@ -31,4 +31,20 @@
     @include mobile {
     }
   }
+
+  &__button {
+    margin-top: 1rem;
+    background-color: #1358db;
+    border: 1px solid #1358db;
+    color: #fff;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: inherit;
+    cursor: pointer;
+    transition: background-color 0.15s;
+
+    &:hover {
+      background-color: #003fc2;
+    }
+  }
 }

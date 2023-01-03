@@ -1,0 +1,90 @@
+@mixin wrapper() {
+  max-width: 1920px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@mixin btn-style($bg-img-url: "") {
+  border: none;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $btn-bg;
+  color: $btn-text-color;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  text-transform: uppercase;
+
+  transition: background-color 300ms ease-in-out;
+
+  &:hover {
+    background-color: $btn-bg-hover-color;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0.8em;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    background-image: url($bg-img-url);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1.4em;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+}
+
+@mixin input-style() {
+  border-radius: 5px;
+  resize: none;
+  border: 2px solid $border-color;
+  outline-color: $btn-bg;
+  background-color: $input-bg-color;
+  height: 40px;
+
+  &::placeholder {
+    color: $text-dark;
+  }
+}
+
+@mixin avatar() {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: -5px center;
+}
+
+@mixin breakpoint($point) {
+  @if $point==tablet {
+    @media screen and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point==desktop {
+    @media screen and (min-width: 1280px) {
+      @content;
+    }
+  }
+}
+
+@mixin btn-style() {
+  background-color: $dark-btn-bg;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  color: white;
+  text-transform: uppercase;
+  height: 52px;
+  font-weight: 100;
+
+  &:hover {
+    background-color: black;
+  }
+}
