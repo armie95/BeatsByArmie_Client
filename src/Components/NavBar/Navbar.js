@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import Button from "../Button/Button";
 import "./Navbar.scss";
 import logo from "../../assets/logos/logo.png";
 
 function Navbar() {
   const navigates = useNavigate();
-  const [button, setButton] = useState(true);
+  //const [button, setButton] = useState(true);
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
-      setButton(false);
+      // setButton(false);
     } else {
-      setButton(true);
+      //  setButton(true);
     }
   };
 
