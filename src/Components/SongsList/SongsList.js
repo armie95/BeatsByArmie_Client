@@ -39,6 +39,7 @@ function SongsList() {
       data: { comment, id },
     })
       .then((response) => {
+        e.preventDefault();
         console.log("response.data", response.data);
         setPlaylist(response.data.playlist);
         setSongs(response.data.songs);
