@@ -10,7 +10,7 @@
   padding: 0em 1em;
   height: 2.5rem;
   max-height: 2.5rem;
-  max-width: 400px;
+  width: 400px;
   font-family: "Titillium Web", sans-serif;
   margin: auto;
   border-radius: 50px;
@@ -70,6 +70,7 @@
   &__name,
   &__duration,
   &__bpm,
+  &__views,
   &__tag {
     font-size: 1.1em;
     text-transform: capitalize;

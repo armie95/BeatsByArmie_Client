@@ -1,0 +1,19 @@
+@import "../../Partials/global";
+
+@include breakpoint(desktop) {
+  .container {
+    width: 100%;
+    border-right: 2px solid $border-color;
+  }
+}
+
+@include breakpoint(desktop) {
+  .wrapper {
+    @include wrapper();
+    display: flex;
+  }
+
+  .container {
+    flex: 4 1;
+  }
+}

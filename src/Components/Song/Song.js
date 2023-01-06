@@ -40,6 +40,7 @@ const Song = ({
         {song?.duration || "duration"}
       </p>
       <p className="song__bpm">{song?.bpm || "bpm"}</p>
+      <p className="song__views">{song?.views || "views"}</p>
       <div className="song__btns">
         {currentSong.id === song.id && isPlaying ? (
           <BsFillPauseFill

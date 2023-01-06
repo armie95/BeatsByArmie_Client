@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 import SongPlayer from "../SongPlayer/SongPlayer";
 import CommentsSection from "../CommentsSection/CommentsSection";
 import NewCommentForm from "../NewCommentForm/NewCommentForm";
+import OtherPlaylists from "../OtherPlaylists/OtherPlaylists";
+import Container from "../Container/Container";
 
 function SongsList() {
   const { id } = useParams();
@@ -15,6 +17,7 @@ function SongsList() {
   const [currentSong, setCurrentSong] = React.useState(null);
   const [playlist, setPlaylist] = React.useState([]);
   const [comment, setComment] = React.useState("");
+  const [mostPlayedSong, setMostPlayedSong] = React.useState([]);
 
   React.useEffect(() => {
     axios({
@@ -49,6 +52,19 @@ function SongsList() {
       .catch((error) => console.log(error, "somethign went wrong!"));
   };
 
+  React.useEffect(() => {
+    axios({
+      url: "http://localhost:8080/mostPlayedSongs",
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => {
+        setMostPlayedSong(response.data.songs);
+        mostPlayedSong(response.data.songs);
+      })
+      .catch((error) => console.log(error, "something might have gone wrong"));
+  });
+
   const handleShuffle = (e) => {
     e.preventDefault();
     let newFormat = songs.sort(() => Math.random() - 0.5);
@@ -76,19 +92,25 @@ function SongsList() {
         setIsPlaying={setIsPlaying}
         handleShuffle={handleShuffle}
       />
-      <h3 className="songs-list__orginal-title">Latest Album</h3>
-      {songs &&
-        songs.map((song) => (
-          <Song
-            key={song.id}
-            song={song}
-            isPlaying={isPlaying}
-            setIsPlaying={setIsPlaying}
-            currentSong={currentSong}
-            setCurrentSong={setCurrentSong}
-          />
-        ))}
-
+      <Container>
+        <h3 className="songs-list__orginal-title">Latest Album</h3>
+        <div className="songs__wrapperbox">
+          <div>
+            {songs &&
+              songs.map((song) => (
+                <Song
+                  key={song.id}
+                  song={song}
+                  isPlaying={isPlaying}
+                  setIsPlaying={setIsPlaying}
+                  currentSong={currentSong}
+                  setCurrentSong={setCurrentSong}
+                />
+              ))}
+          </div>
+          <OtherPlaylists />
+        </div>
+      </Container>
       <NewCommentForm
         comment={comment}
         setComment={setComment}
