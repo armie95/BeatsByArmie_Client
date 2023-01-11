@@ -20,7 +20,7 @@ function PlayList() {
         setPlayList(filterArray);
       })
       .catch((error) => console.log(error, "somethign went wrong!"));
-  }, []);
+  }, [id]);
 
   return (
     <div className="playlist2">
