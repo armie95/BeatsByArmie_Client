@@ -17,7 +17,18 @@ function SongsList() {
   const [currentSong, setCurrentSong] = React.useState(null);
   const [playlist, setPlaylist] = React.useState([]);
   const [comment, setComment] = React.useState("");
-  const [mostPlayedSong, setMostPlayedSong] = React.useState([]);
+  const [mostPlayyedSong, setMostPlayedSong] = React.useState([]);
+
+  React.useEffect(() => {
+    axios({
+      url: "https://beatsbyarmie.herokuapp.com/mostPlayedSongs",
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }).then((response) => {
+      console.log(response.data, "response.data");
+      setMostPlayedSong(response.data.songs);
+    });
+  }, []);
 
   React.useEffect(() => {
     axios({
@@ -52,19 +63,6 @@ function SongsList() {
       .catch((error) => console.log(error, "somethign went wrong!"));
   };
 
-  React.useEffect(() => {
-    axios({
-      url: "http://localhost:8080/mostPlayedSongs",
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => {
-        setMostPlayedSong(response.data.songs);
-        mostPlayedSong(response.data.songs);
-      })
-      .catch((error) => console.log(error, "something might have gone wrong"));
-  });
-
   const handleShuffle = (e) => {
     e.preventDefault();
     let newFormat = songs.sort(() => Math.random() - 0.5);
@@ -93,9 +91,9 @@ function SongsList() {
         handleShuffle={handleShuffle}
       />
       <Container>
-        <h3 className="songs-list__orginal-title">Latest Album</h3>
+        <h3 className="songs__title">Latest Album</h3>
         <div className="songs__wrapperbox">
-          <div>
+          <div className="songs__songsbox">
             {songs &&
               songs.map((song) => (
                 <Song

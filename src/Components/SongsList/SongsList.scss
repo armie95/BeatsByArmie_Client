@@ -40,7 +40,28 @@
   &__wrapperbox {
     width: 50%;
     display: flex;
+    margin: 0 auto;
     align-items: flex-start;
     justify-content: flex-end;
+  }
+
+  &__songsbox {
+    margin-right: 10%;
+  }
+
+  &__title {
+    margin: 2rem 2rem 2rem 2rem;
+    text-align: center;
+    padding: 17px;
+    font-size: 1.4rem;
+    color: rgb(6, 45, 45);
+    font-weight: 800;
+    border-top: 2px solid rgb(6, 45, 45, 0.5);
+    border-bottom: 2px solid rgb(6, 45, 45, 0.5);
+    @include mobile {
+      font-size: 14px;
+      margin: 2%;
+      padding: 9px;
+    }
   }
 }

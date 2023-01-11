@@ -38,8 +38,7 @@ function PlayList() {
               alt="thumbnail"
               className="playlist__img"
               src={
-                "https://beatsbyarmie.herokuapp.com/assets/images/" +
-                play?.album_image
+                "https://beatsbyarmie.herokuapp.com/images/" + play?.album_image
               }
             />
             <p className="playlist__name">{play.name}</p>
