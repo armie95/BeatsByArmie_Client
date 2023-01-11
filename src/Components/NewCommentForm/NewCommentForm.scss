@@ -1,4 +1,6 @@
 .new-comment-form {
+  margin-top: 40px;
+
   &__user-img {
     display: flex;
     max-width: 50px;
@@ -10,22 +12,25 @@
   &__row {
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    padding: 0 1rem 0;
+    align-items: center;
+    padding: 0 1rem 1rem 0;
   }
   &__right-col {
     display: flex;
     flex-direction: column;
     flex: 3 1;
+    align-items: center;
   }
   &__input-group {
     display: flex;
     flex-direction: column;
     padding: 0.25rem;
+    width: 100%;
   }
   &__input {
     height: 50px;
     padding: 1rem;
+    width: 100%;
   }
   &__left {
     display: flex;

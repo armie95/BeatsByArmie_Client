@@ -93,16 +93,16 @@ function SongsList() {
                   setCurrentSong={setCurrentSong}
                 />
               ))}
+            <NewCommentForm
+              comment={comment}
+              setComment={setComment}
+              addComment={addComment}
+            />
+            <CommentsSection playlist={playlist} />
           </div>
           <OtherPlaylists />
         </div>
       </Container>
-      <NewCommentForm
-        comment={comment}
-        setComment={setComment}
-        addComment={addComment}
-      />
-      <CommentsSection playlist={playlist} />
     </div>
   );
 }
