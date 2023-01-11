@@ -17,18 +17,6 @@ function SongsList() {
   const [currentSong, setCurrentSong] = React.useState(null);
   const [playlist, setPlaylist] = React.useState([]);
   const [comment, setComment] = React.useState("");
-  const [mostPlayyedSong, setMostPlayedSong] = React.useState([]);
-
-  React.useEffect(() => {
-    axios({
-      url: "https://beatsbyarmie.herokuapp.com/mostPlayedSongs",
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    }).then((response) => {
-      console.log(response.data, "response.data");
-      setMostPlayedSong(response.data.songs);
-    });
-  }, []);
 
   React.useEffect(() => {
     axios({
