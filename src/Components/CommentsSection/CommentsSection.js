@@ -11,7 +11,6 @@ const CommentsSection = ({ playlist }) => {
         playlist.comments.map((comment) => (
           <Comment key={comment.id} comment={comment} />
         ))}
-      ;
     </section>
   );
 };

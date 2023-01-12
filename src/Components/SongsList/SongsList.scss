@@ -37,22 +37,39 @@
     }
   }
 
+  // &__container {
+  //   @include mobile {
+  //     width: 95% !important;
+  //   }
+  // }
+
   &__wrapperbox {
-    width: 55%;
+    width: 50%;
     display: flex;
-    padding-left: 12%;
     margin: 0 auto;
     align-items: flex-start;
     justify-content: flex-end;
+
+    @include mobile {
+      width: 95%;
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &__songsbox {
     margin-right: 10%;
+    @include mobile {
+      margin-right: 0;
+    }
   }
 
   &__title {
-    margin: 2rem 2rem 2rem 2rem;
+    margin: 2rem 2.5vw 2rem 2.5vw;
     text-align: center;
+    width: 95vw;
     padding: 17px;
     font-size: 1.4rem;
     color: rgb(6, 45, 45);
@@ -61,7 +78,6 @@
     border-bottom: 2px solid rgb(6, 45, 45, 0.5);
     @include mobile {
       font-size: 14px;
-      margin: 2%;
       padding: 9px;
     }
   }
